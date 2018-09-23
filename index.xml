@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Theme Air</title>
+    <title>GworkFun&#39;Blog</title>
     <link>https://gwokfun.github.io/</link>
-    <description>Recent content on Hugo Theme Air</description>
+    <description>Recent content on GworkFun&#39;Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <copyright>All rights reserved - 2016</copyright>
+    <language>zh-CN</language>
+    <copyright>All rights reserved - 2018</copyright>
     <lastBuildDate>Sat, 22 Sep 2018 11:56:20 +0800</lastBuildDate>
     
 	<atom:link href="https://gwokfun.github.io/index.xml" rel="self" type="application/rss+xml" />
