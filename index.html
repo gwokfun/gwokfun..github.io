@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  	<meta property="og:title" content=" GworkFun&#39;Blog" />
-  	<meta property="og:site_name" content="GworkFun&#39;Blog" />
+  	<meta property="og:title" content=" GwokFun&#39;Blog" />
+  	<meta property="og:site_name" content="GwokFun&#39;Blog" />
   	<meta property="og:url" content="https://gwokfun.github.io/" />
     
     
@@ -14,10 +14,10 @@
     
 
   <title>
-     GworkFun&#39;Blog
+     GwokFun&#39;Blog
   </title>
 
-    <meta name="description" content="记录点滴" />
+    <meta name="description" content="记录身边的点滴" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,7 +32,7 @@
     
       
       
-        <link href="https://gwokfun.github.io/index.xml" rel="alternate" type="application/rss+xml" title="GworkFun&#39;Blog" />
+        <link href="https://gwokfun.github.io/index.xml" rel="alternate" type="application/rss+xml" title="GwokFun&#39;Blog" />
       
     
     <meta name="generator" content="Hugo 0.48" />
@@ -67,9 +67,9 @@
 <div class="vertical">
         <div class="main-header-content inner">
             <h1 class="page-title">
-              <a class="btn-bootstrap-2 title-scroll" href="#content">GworkFun&#39;Blog</a>
+              <a class="btn-bootstrap-2 title-scroll" href="#content">GwokFun&#39;Blog</a>
           </h1>
-          <h2 class="page-description">记录点滴</h2>
+          <h2 class="page-description">记录身边的点滴</h2>
         </div>
 </div>
     <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
@@ -92,12 +92,102 @@
         
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="https://gwokfun.github.io/post/test/">Test</a></h2>
+        <h2 class="post-title"><a href="https://gwokfun.github.io/post/hugo%E4%BD%BF%E7%94%A8/">Hugo使用</a></h2>
     </header>
     <section class="post-excerpt">
       <p>
           <section class="post-content">
-            <p>hello world!</p>
+            
+
+<h3 id="1-下载hugo">1.下载hugo</h3>
+
+<p>1) 下载最新hugo二进制文件。
+<a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a></p>
+
+<p>2) 配置环境变量</p>
+
+<h3 id="2-创建blog">2.创建blog</h3>
+
+<p>1) 生成站点</p>
+
+<pre><code class="language-hugo">
+创建的站点文件目录说明：
+
+|- archetypes ：存放default.md，头文件格式
+|- content ：content目录存放博客文章（.md文件）
+|- data ：存放自定义模版，导入的toml文件（或json，yaml）
+|- layouts ：layouts目录存放的是网站的模板文件
+|- themes : 站点主题
+|- static ：static目录存放js/css/img等静态资源
+|- config.toml ：config.toml是网站的配置文件
+
+2) 安装主题
+
+有众多主题，也包含详细的使用手册
+
+https://themes.gohugo.io/
+
+3) 配置config.toml
+
+```toml
+# 主机名 例如: http://spf13.com/
+baseURL =                     &quot;&quot;
+# 语言编码(中文: zh-CN)
+languageCode =                &quot;&quot;
+# 默认的内容语言
+defaultContentLanguage =      &quot;zh-CN&quot;
+# 自动检测是否包含中文/日文/韩文，该参数会影响摘要和字数统计功能，建议设置为true
+hasCJKLanguage =              false
+# 若为 false，`Getting Started` 这样的英文标签将会被转换为 `getting-started`
+preserveTaxonomyNames =       true
+# 设置使用的主题名称 (默认储存在 /themes/THEMENAME/)
+theme =        
+# 分页
+paginate =                    10
+paginatePath =                &quot;page&quot;
+# 启用 Emoji; see emoji-cheat-sheet.com
+enableEmoji =                 false
+# 创建robots.txt，建议设置为true
+enableRobotsTXT =             false
+# 定义文章访问路径，详细见下文&quot;URL管理&quot; See &quot;content-management/urls/&quot;
+permalinks =       
+</code></pre>
+
+<p>4) 测试站点</p>
+
+<pre><code class="language-shell">hugo server
+</code></pre>
+
+<p>访问<a href="http://localhost:1314">http://localhost:1314</a></p>
+
+<h3 id="3-部署至github">3.部署至github</h3>
+
+<p>1) 生成静态文件</p>
+
+<pre><code class="language-shell">hugo
+</code></pre>
+
+<p>在blog目录下，生成public目录，里面包含博客需要的静态文件。</p>
+
+<p>2) Github 创建仓库</p>
+
+<p>Github上创建仓库，命名为yourgithubname.github.io</p>
+
+<p>3)  提交public</p>
+
+<pre><code class="language-shell">git clone git@github.com:yourgithubname/yourgithubname.github.io.git hugoblog
+cp ..\blog\public hugoblog
+cd hugoblog
+git add .
+git commit -m &quot;first commit&quot;
+git push -u origin master
+</code></pre>
+
+<p>4) 访问blog</p>
+
+<p>浏览器访问</p>
+
+<p><a href="https://yourgithubname.github.io">https://yourgithubname.github.io</a></p>
 
           </section>
       </p>
@@ -110,9 +200,305 @@
         
             GwokFun Wong
         
+        on
+            
+                <a href="https://gwokfun.github.io/tags/hugo/">#Hugo</a>,
+            
+                <a href="https://gwokfun.github.io/tags/github/">#github</a>,
+            
         
-        <time class="post-date" datetime="2018-09-22T11:56:20&#43;08:00">
-            22 Sep 2018
+        <time class="post-date" datetime="2018-09-23T11:48:06&#43;08:00">
+            23 Sep 2018
+        </time>
+    </footer>
+</article>
+
+    
+        
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="https://gwokfun.github.io/post/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8E%92%E6%9F%A5/">Linux服务器排查</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+          <section class="post-content">
+            
+
+<h2 id="一-针对情况">一、针对情况</h2>
+
+<ul>
+<li>服务器上存在可疑进程，系统资源占用高（挖矿程序等）；</li>
+<li>发现服务器对外大量发包（DDOS肉鸡）；</li>
+<li>不正常的端口连接（反向shell等）；</li>
+<li>服务器日志被恶意删除；</li>
+<li>&hellip;</li>
+</ul>
+
+<h2 id="二-注意事项">二、注意事项</h2>
+
+<ul>
+<li>对文件进行操作先备份文件再操作</li>
+<li>不要vim等编辑器打开文件，会修改文件时间戳</li>
+<li>拷贝源文件到服务器外需要附上md5校验</li>
+<li>根据排查流程简单生成报告，svn提交</li>
+</ul>
+
+<h2 id="三-排查思路">三、排查思路</h2>
+
+<ol>
+<li><p>文件分析<br />
+a) 文件日期、新增文件、可疑/异常文件、最近使用文件、浏览器下载文件
+​b) Webshell 排查与分析
+​c) 核心应用关联目录文件分析</p></li>
+
+<li><p>进程分析<br />
+​a) 当前活动进程 &amp; 远程连接
+​b) 启动进程&amp;计划任务
+​c) 进程工具分析
+​ i. Windows:Pchunter
+​ ii. Linux: Chkrootkit&amp;Rkhunter</p></li>
+
+<li><p>系统信息<br />
+​a) 环境变量
+​b) 帐号信息
+​c) History
+​d) 系统配置文件</p></li>
+
+<li><p>日志分析<br />
+​a) 操作系统日志
+​ i. Windows: 事件查看器（eventvwr）
+​ ii. Linux: /var/log/
+​b) 应用日志分析
+​ i. Access.log
+​ ii. Error.log</p></li>
+</ol>
+
+<h2 id="四-分析排查">四、分析排查</h2>
+
+<h3 id="文件分析">文件分析</h3>
+
+<p>1.敏感目录的文件分析</p>
+
+<p>1）临时文件目录
+如：/tmp/、/var/tmp
+木马或者异常文件可能隐藏在临时目录
+2）命令目录
+如：/usr/bin/、/usr/sbin/等，根据echo $PATH中的命令目录进行确定排查目录
+常见手段为替换或修改这些目录的命令，隐藏恶意代码等。</p>
+
+<p>针对可疑文件可以使用stat进行创建修改时间、访问时间的详细查看，若修改时间距离事件日期接近，有线性关联，说明可能被篡改或者其他。</p>
+
+<p>​例如:</p>
+
+<pre><code>#​查看tmp目录下的文件
+ls –alt /tmp/
+#​查看文件修改、创建、访问时间
+stat file
+</code></pre>
+
+<p>2.特殊权限的文件
+特殊权限主要为777权限以及s位权限的文件，存在被篡改或替换的风险，也是后门木马程序的特征之一，需要留意。
+分析方法，通过stat对可疑文件进行检查，修改时间是否为入侵阶段；file判断文件类型。</p>
+
+<pre><code>#查找777的权限的文件 
+find / -type f -perm 4777
+#查找s位权限的文件 
+find / -type f -user root -group root \( -perm -04000 -o -perm -02000 \) -exec ls {} \;
+</code></pre>
+
+<h3 id="进程分析">进程分析</h3>
+
+<p>1.网络进程
+使用netstat 网络连接命令，分析可疑端口、可疑IP、可疑PID及程序进程</p>
+
+<pre><code>netstat -antlp | grep ESTABLISHED   查看已经建立的网络连接
+netstat -antlp | grep LISTEN    检查可以监听端口
+ip link | grep PROMISC　　正常网卡不应该存在promisc，如果存在可能有sniffer
+lsof -i 列出所有的网络连接
+arp -a　　查看arp记录是否正常
+ifconfig -a　　查看网卡设置
+</code></pre>
+
+<p>2.获取进程</p>
+
+<pre><code>ps -aux　　查看进程
+top        查看进程
+lsof -p pid　　查看进程所打开的端口及文件
+lsof -c 进程名　　查看关联文件
+file  查看文件类型
+strings 查看二进制文件内容可读字符
+ps -aux | grep -v &quot;\[&quot;   查看非系统进程
+
+</code></pre>
+
+<p>3.隐藏进程
+简单对比ps -ef 与/proc的进程，后续使用rootkit进行检查较为可靠。</p>
+
+<pre><code>ps -ef | awk '{print $2}' | sort -n | uniq &gt;1
+ls /proc | sort -n |uniq &gt;2
+diff 1 2
+</code></pre>
+
+<p>4.后门排查
+除以上文件、进程、系统 分析外，推荐工具：</p>
+
+<p>​ chkrootkit rkhunter</p>
+
+<p>rkhunter</p>
+
+<pre><code>apt-get install -y rkhunter
+rkhunter --checkall 
+#检查过程中需要回车确认，最后日志生成在/var/log/rkhunter，需重点关注日志中的warning等项目。
+</code></pre>
+
+<p>5.web服务检查
+若无web服务，跳过此步。
+一般如果网络边界做好控制，通常对外开放的仅是Web服务，那么需要先找到Webshell，可以通过如下途径：</p>
+
+<p>1）检查web根目录
+i.查看nginx或apache2的配置文件，获取root目录
+ii.检查该目录下文件，以及浏览器访问情况
+iii.分析可疑文件（关注jsp、php、asp、aspx等文件），是否存在webshell等后门
+2)webshell查杀工具
+使用河马shell</p>
+
+<pre><code>cd /opt/
+wget -O hm-linux.tgz http://down.shellpub.com/hm/latest/hm-linux-amd64.tgz?version=1.4.2
+tar xvf hm-linux.tgz
+./hm scan 你的web目录
+扫描完成之后结果会保存为result.csv文件，使用记事本或者excel打开查看
+</code></pre>
+
+<p>2）与测试环境目录做对比</p>
+
+<pre><code>diff -r {生产dir} {测试dir} 
+</code></pre>
+
+<p>3）通过Access Log获取一些信息。</p>
+
+<pre><code>#伴随一些其他攻击特征
+egrep '(select|script|acunetix|sqlmap)' /var/log/httpd/access_log
+#页面访问排名前十的IP
+cat access.log | cut -f1 -d &quot; &quot; | sort | uniq -c | sort -k 1 -r | head -10
+#页面访问排名前十的URL
+cat access.log | cut -f4 -d &quot; &quot; | sort | uniq -c | sort -k 1 -r | head -10
+#查看最耗时的页面
+cat access.log | sort -k 2 -n -r | head 10
+#访问频次
+awk '{print $1}' /var/log/nginx/access.log |sort -n |uniq -c |sort 
+awk '{print $1}' /var/log/apache2/access.log |sort -n |uniq -c |sort 
+</code></pre>
+
+<h3 id="系统信息">系统信息</h3>
+
+<p>1.查看分析history，注意history是否篡改或删除<br />
+a) wget 远程某主机（域名&amp;IP）的远控文件；
+b) 尝试连接内网某主机（ssh scp），便于分析攻击者意图;
+c) 打包某敏感数据或代码，tar zip 类命令
+d) 对系统进行配置，包括命令修改、远控木马类，可找到攻击者关联信息…</p>
+
+<p>2.查看分析用户相关分析<br />
+​a) useradd userdel 的命令时间变化（stat），以及是否包含可疑信息
+b) cat /etc/passwd 分析可疑帐号，可登录帐号</p>
+
+<pre><code>awk -F: '{if($3==0)print $1}' /etc/passwd  查看UID为0的帐号
+cat /etc/passwd | grep -E &quot;/bin/bash$&quot; 查看能够登录的帐号
+ls -l /etc/passwd　　查看passwd最后修改时间
+awk -F: 'length($2)==0 {print $1}' /etc/shadow　　查看是否存在空口令用户 
+
+</code></pre>
+
+<p>3.查看分析任务计划</p>
+
+<p>a) 通过crontabl –l 查看当前的任务计划有哪些，是否有后门木马程序启动相关信息；
+b) 查看etc目录任务计划相关文件，ls /etc/cron*</p>
+
+<p>4.查看linux 开机启动程序</p>
+
+<p>a) 查看rc.local文件（/etc/init.d/rc.local /etc/rc.local）
+b) ls –alt /etc/init.d/
+c) chkconfig &ndash;list(需要安装，apt-get install -y chkconfig)</p>
+
+<p>5.查看系统用户登录信息</p>
+
+<p>a) 使用lastlog命令，系统中所有用户最近一次登录信息。</p>
+
+<p>b) 使用lastb命令，用于显示用户错误的登录列表</p>
+
+<p>c) 使用last命令，用于显示用户最近登录信息（数据源为/var/log/wtmp，var/log/btmp）
+    utmp文件中保存的是当前正在本系统中的用户的信息。
+   wtmp文件中保存的是登录过本系统的用户的信息。</p>
+
+<p>​ /var/log/wtmp 文件结构和/var/run/utmp 文件结构一样，都是引用/usr/include/bits/utmp.h 中的struct utmp</p>
+
+<p>6.系统环境分析</p>
+
+<pre><code>env  打印环境变量
+echo $PATH 分析系统路径有无敏感可疑信息
+cat /etc/profile /etc/bash.bashrc 分析这些文件中环境变量
+</code></pre>
+
+<p>7.ssh服务分析</p>
+
+<p>a) 比对ssh的版本</p>
+
+<pre><code>    ssh -V
+</code></pre>
+
+<p>b) 查看ssh配置文件和/usr/sbin/sshd的时间</p>
+
+<pre><code>    stat /usr/sbin/sshd
+</code></pre>
+
+<p>c) 查看ssh相关目录有无可疑的公钥存在。
+ls -l /root/.ssh/ /etc/ssh/</p>
+
+<h3 id="日志分析">日志分析</h3>
+
+<pre><code>日志文件
+/var/log/message       包括整体系统信息
+/var/log/auth.log        包含系统授权信息，包括用户登录和使用的权限机制等
+/var/log/userlog         记录所有等级用户信息的日志。
+/var/log/cron           记录crontab命令是否被正确的执行
+/var/log/xferlog(vsftpd.log)记录Linux FTP日志
+/var/log/lastlog         记录登录的用户，可以使用命令lastlog查看
+/var/log/secure         记录大多数应用输入的账号与密码，登录成功与否
+var/log/wtmp　　      记录登录系统成功的账户信息，等同于命令last
+var/log/faillog　　      记录登录系统不成功的账号信息，一般会被黑客删除
+</code></pre>
+
+<p>登录日志可以关注Accepted、Failed password 、invalid特殊关键字</p>
+
+<pre><code>定位有多少IP在爆破主机的root帐号
+grep &quot;Failed password for root&quot; /var/log/auth.log | awk '{print $11}' | sort | uniq -c | sort -nr | more
+登录成功的IP有哪些
+grep &quot;Accepted &quot; /var/log/auth.log | awk '{print $11}' | sort | uniq -c | sort -nr | more  
+tail -400f demo.log #监控最后400行日志文件的变化 等价与 tail -n 400 -f （-f参数是实时）  
+less demo.log #查看日志文件，支持上下滚屏，查找功能  
+uniq -c demo.log  #标记该行重复的数量，不重复值为1 
+grep -c 'ERROR' demo.log   #输出文件demo.log中查找所有包行ERROR的行的数量
+</code></pre>
+
+          </section>
+      </p>
+      
+    </section>
+    <footer class="post-meta">
+        
+            <img class="author-thumb" src="https://gwokfun.github.io/images/user.png" alt="Author image" nopin="nopin" />
+        
+        
+            GwokFun Wong
+        
+        on
+            
+                <a href="https://gwokfun.github.io/tags/linux/">#Linux</a>,
+            
+                <a href="https://gwokfun.github.io/tags/%E5%85%A5%E4%BE%B5/">#入侵</a>,
+            
+        
+        <time class="post-date" datetime="2018-09-23T11:27:39&#43;08:00">
+            23 Sep 2018
         </time>
     </footer>
 </article>
@@ -129,7 +515,7 @@
 </main>
 
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="">GworkFun&#39;Blog</a> All rights reserved - 2018</section>
+        <section class="copyright"><a href="">GwokFun&#39;Blog</a> All rights reserved - 2018</section>
         
         <section class="poweredby">Proudly generated by <a class="icon-hugo" href="https://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/syui/hugo-theme-air">hugo-theme-air</a> theme</section>
         

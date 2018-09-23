@@ -5,16 +5,16 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  	<meta property="og:title" content=" Posts &middot;  GwokFun&#39;Blog" />
+  	<meta property="og:title" content=" 主机安全 &middot;  GwokFun&#39;Blog" />
   	<meta property="og:site_name" content="GwokFun&#39;Blog" />
-  	<meta property="og:url" content="https://gwokfun.github.io/post/" />
+  	<meta property="og:url" content="https://gwokfun.github.io/categories/%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8/" />
     
     
     <meta property="og:type" content="website" />
     
 
   <title>
-     Posts &middot;  GwokFun&#39;Blog
+     主机安全 &middot;  GwokFun&#39;Blog
   </title>
 
     <meta name="description" content="记录身边的点滴" />
@@ -34,12 +34,12 @@
           <link href="https://gwokfun.github.io/index.xml" rel="alternate" type="application/rss+xml" title="GwokFun&#39;Blog" />
       
       
-        <link href="https://gwokfun.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; GwokFun&#39;Blog" />
+        <link href="https://gwokfun.github.io/categories/%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8/index.xml" rel="alternate" type="application/rss+xml" title="主机安全 &middot; GwokFun&#39;Blog" />
       
     
     <meta name="generator" content="Hugo 0.48" />
 
-    <link rel="canonical" href="https://gwokfun.github.io/post/" />
+    <link rel="canonical" href="https://gwokfun.github.io/categories/%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8/" />
 
     
 <div id="particles-js"></div>
@@ -64,7 +64,7 @@
       
       
         
-          <a class="menu-button icon-feed" href="https://gwokfun.github.io/post/index.xml">&nbsp;&nbsp;Subscribe</a>
+          <a class="menu-button icon-feed" href="https://gwokfun.github.io/categories/%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8/index.xml">&nbsp;&nbsp;Subscribe</a>
         
       
     </nav>
@@ -91,131 +91,6 @@
 </nav>
 
 	</div>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://gwokfun.github.io/post/hugo%E4%BD%BF%E7%94%A8/">Hugo使用</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-          <section class="post-content">
-            
-
-<h3 id="1-下载hugo">1.下载hugo</h3>
-
-<p>1) 下载最新hugo二进制文件。
-<a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a></p>
-
-<p>2) 配置环境变量</p>
-
-<h3 id="2-创建blog">2.创建blog</h3>
-
-<p>1) 生成站点</p>
-
-<pre><code class="language-hugo">
-创建的站点文件目录说明：
-
-|- archetypes ：存放default.md，头文件格式
-|- content ：content目录存放博客文章（.md文件）
-|- data ：存放自定义模版，导入的toml文件（或json，yaml）
-|- layouts ：layouts目录存放的是网站的模板文件
-|- themes : 站点主题
-|- static ：static目录存放js/css/img等静态资源
-|- config.toml ：config.toml是网站的配置文件
-
-2) 安装主题
-
-有众多主题，也包含详细的使用手册
-
-https://themes.gohugo.io/
-
-3) 配置config.toml
-
-```toml
-# 主机名 例如: http://spf13.com/
-baseURL =                     &quot;&quot;
-# 语言编码(中文: zh-CN)
-languageCode =                &quot;&quot;
-# 默认的内容语言
-defaultContentLanguage =      &quot;zh-CN&quot;
-# 自动检测是否包含中文/日文/韩文，该参数会影响摘要和字数统计功能，建议设置为true
-hasCJKLanguage =              false
-# 若为 false，`Getting Started` 这样的英文标签将会被转换为 `getting-started`
-preserveTaxonomyNames =       true
-# 设置使用的主题名称 (默认储存在 /themes/THEMENAME/)
-theme =        
-# 分页
-paginate =                    10
-paginatePath =                &quot;page&quot;
-# 启用 Emoji; see emoji-cheat-sheet.com
-enableEmoji =                 false
-# 创建robots.txt，建议设置为true
-enableRobotsTXT =             false
-# 定义文章访问路径，详细见下文&quot;URL管理&quot; See &quot;content-management/urls/&quot;
-permalinks =       
-</code></pre>
-
-<p>4) 测试站点</p>
-
-<pre><code class="language-shell">hugo server
-</code></pre>
-
-<p>访问<a href="http://localhost:1314">http://localhost:1314</a></p>
-
-<h3 id="3-部署至github">3.部署至github</h3>
-
-<p>1) 生成静态文件</p>
-
-<pre><code class="language-shell">hugo
-</code></pre>
-
-<p>在blog目录下，生成public目录，里面包含博客需要的静态文件。</p>
-
-<p>2) Github 创建仓库</p>
-
-<p>Github上创建仓库，命名为yourgithubname.github.io</p>
-
-<p>3)  提交public</p>
-
-<pre><code class="language-shell">git clone git@github.com:yourgithubname/yourgithubname.github.io.git hugoblog
-cp ..\blog\public hugoblog
-cd hugoblog
-git add .
-git commit -m &quot;first commit&quot;
-git push -u origin master
-</code></pre>
-
-<p>4) 访问blog</p>
-
-<p>浏览器访问</p>
-
-<p><a href="https://yourgithubname.github.io">https://yourgithubname.github.io</a></p>
-
-          </section>
-      </p>
-      
-    </section>
-    <footer class="post-meta">
-        
-            <img class="author-thumb" src="https://gwokfun.github.io/images/user.png" alt="Author image" nopin="nopin" />
-        
-        
-            GwokFun Wong
-        
-        on
-            
-                <a href="https://gwokfun.github.io/tags/hugo/">#Hugo</a>,
-            
-                <a href="https://gwokfun.github.io/tags/github/">#github</a>,
-            
-        
-        <time class="post-date" datetime="2018-09-23T11:48:06&#43;08:00">
-            23 Sep 2018
-        </time>
-    </footer>
-</article>
 
 	
 	   
