@@ -114,8 +114,10 @@
 
 <p>1) 生成站点</p>
 
-<pre><code class="language-hugo">
-创建的站点文件目录说明：
+<pre><code class="language-shell">hugo new site blog
+</code></pre>
+
+<pre><code class="language-shell">创建的站点文件目录说明：
 
 |- archetypes ：存放default.md，头文件格式
 |- content ：content目录存放博客文章（.md文件）
@@ -124,17 +126,17 @@
 |- themes : 站点主题
 |- static ：static目录存放js/css/img等静态资源
 |- config.toml ：config.toml是网站的配置文件
+</code></pre>
 
-2) 安装主题
+<p>2) 安装主题</p>
 
-有众多主题，也包含详细的使用手册
+<p>有众多主题，也包含详细的使用手册</p>
 
-https://themes.gohugo.io/
+<p><a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></p>
 
-3) 配置config.toml
+<p>3) 配置config.toml</p>
 
-```toml
-# 主机名 例如: http://spf13.com/
+<pre><code class="language-toml"># 主机名 例如: http://spf13.com/
 baseURL =                     &quot;&quot;
 # 语言编码(中文: zh-CN)
 languageCode =                &quot;&quot;
